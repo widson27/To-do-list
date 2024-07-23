@@ -21,26 +21,12 @@ function criarElementoTarefa(tarefa) {
     checkBox.setAttribute('type', 'checkbox');
     checkBox.checked = tarefa.concluida;
 
-    checkBox.onclick = () => {
-        tarefa.concluida = !tarefa.concluida;
-        li.classList.toggle('done');
-        atualizarTarefas();
-    };
-
     const paragrafo = document.createElement('p');
     paragrafo.textContent = tarefa.descricao;
 
     const botaoEditar = document.createElement('button');
     botaoEditar.classList.add('button-edit');
-
-    botaoEditar.onclick = () => {
-        const novaDescricao = prompt("Qual é o novo nome da tarefa?");
-        if (novaDescricao) {
-            paragrafo.textContent = novaDescricao;
-            tarefa.descricao = novaDescricao;
-            atualizarTarefas();
-        }
-    };
+    botaoEditar.textContent = 'Editar';
 
     const imagemBotaoEditar = document.createElement('img');
     imagemBotaoEditar.setAttribute('src', '/img/edit.png');
@@ -48,12 +34,7 @@ function criarElementoTarefa(tarefa) {
 
     const botaoApagar = document.createElement('button');
     botaoApagar.classList.add('button-delete');
-
-    botaoApagar.onclick = () => {
-        tarefas = tarefas.filter(t => t !== tarefa);
-        li.remove();
-        atualizarTarefas();
-    };
+    botaoApagar.textContent = 'Apagar';
 
     const imagemBotaoApagar = document.createElement('img');
     imagemBotaoApagar.setAttribute('src', '/img/lixeira.svg');
@@ -66,6 +47,33 @@ function criarElementoTarefa(tarefa) {
     li.append(checkBox);
     li.append(paragrafo);
     li.append(div);
+
+    const atualizarEstadoBotaoEditar = () => {
+        botaoEditar.disabled = tarefa.concluida;
+    };
+    atualizarEstadoBotaoEditar();
+
+    checkBox.onclick = () => {
+        tarefa.concluida = !tarefa.concluida;
+        li.classList.toggle('done');
+        atualizarEstadoBotaoEditar();
+        atualizarTarefas();
+    };
+
+    botaoEditar.onclick = () => {
+        const novaDescricao = prompt("Qual é o novo nome da tarefa?");
+        if (novaDescricao) {
+            paragrafo.textContent = novaDescricao;
+            tarefa.descricao = novaDescricao;
+            atualizarTarefas();
+        }
+    };
+
+    botaoApagar.onclick = () => {
+        tarefas = tarefas.filter(t => t !== tarefa);
+        li.remove();
+        atualizarTarefas();
+    };
 
     li.onclick = () => {
         document.querySelectorAll('.task-select').forEach(elemento => {
