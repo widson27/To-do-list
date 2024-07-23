@@ -26,7 +26,6 @@ function criarElementoTarefa(tarefa) {
 
     const botaoEditar = document.createElement('button');
     botaoEditar.classList.add('button-edit');
-    botaoEditar.textContent = 'Editar';
 
     const imagemBotaoEditar = document.createElement('img');
     imagemBotaoEditar.setAttribute('src', '/img/edit.png');
@@ -34,7 +33,6 @@ function criarElementoTarefa(tarefa) {
 
     const botaoApagar = document.createElement('button');
     botaoApagar.classList.add('button-delete');
-    botaoApagar.textContent = 'Apagar';
 
     const imagemBotaoApagar = document.createElement('img');
     imagemBotaoApagar.setAttribute('src', '/img/lixeira.svg');
