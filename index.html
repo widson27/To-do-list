@@ -13,14 +13,41 @@
 </head>
 
 <body>
-    <div class="container">
-        <input class="input-task" placeholder="Adicionar tarefas">
-        <button class="button-add-task">Adicionar</button>
-
-        <ul class="list-tasks">
-            <div class="timer-circle" id="timer">25:00</div>
-        </ul>
-    </div>
+    <header class="cabecalho">
+        <h1 class="titulo-cabecalho">Lista de Tarefas</h1>
+    </header>
+    <main class="container-principal">
+        <div class="cabecalho-tarefas">
+            <h2 class="subtitulo">Tarefas:</h2>
+            <button class="button-more">
+                <img src="img/more.svg" alt="">
+            </button>
+        </div>
+        <section class="section-task-container">
+            <ul class="list-tasks"></ul>
+            <form class="form-add-task hidden">
+                <div class="form-field">
+                    <label for="" class="form-label">
+                        Adcionando tarefa
+                    </label>
+                    <textarea required class= "form-textarea" placeholder="No que você está trabalhando?"></textarea>
+                </div>
+                <footer class="form-footer">
+                    <button type="button" class="form-footer__button form-footer__button--delete">
+                        <img src="/img/lixeira.svg" alt="" width="13"> Deletar
+                    </button>
+                    <button type="button" class="form-footer__button form-footer__button--cancel">
+                        <img src="/img/close.png" alt="" width="13"> Cancelar
+                    </button>
+                    <button class="form-footer__button form-footer__button--confirm">
+                        <img src="/img/save.png" alt="" width="13"> Salvar
+                    </button>
+                </footer>
+            </form>
+            <button class="button-add-task"><img src="/img/add.png" alt="" width="20"> Adicionar nova tarefa
+            </button>
+        </section>
+    </main>
 </body>
-<script src="scripts.js"></script>
+<script src="script.js"></script>
 </html>
