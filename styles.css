@@ -163,7 +163,7 @@ body{
     width: 100%;
     border-radius: 0.8rem;
     padding: 0.8rem;
-    background: var(--fundo-card);
+    background: #7c8fa2;
 }
 
 .button-edit,
