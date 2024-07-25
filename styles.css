@@ -237,3 +237,49 @@ body{
     opacity: 0.8;
     cursor: not-allowed;
 }
+
+
+@media (max-width: 850px){
+    body{
+        background-size: 200% 200%;
+    }
+
+    .cabecalho{
+        padding-top: 90px;
+    }
+
+    .titulo-cabecalho{
+        width: 320px;
+        font-size: 35px;
+    }
+
+    .cabecalho-tarefas{
+        gap: 23%;
+        justify-content: space-between;
+    }
+
+	.container-principal{
+        width: 90%;
+    }
+
+    .form-add-task {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .form-footer{
+        gap: 15px;
+    }
+
+    .form-footer__button{
+        gap: 0.5rem;
+    }
+
+    .form-textarea {
+        font-size: 16px;
+    }
+
+    .section-task-container{
+        gap: 0px;
+    }
+}
