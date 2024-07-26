@@ -240,10 +240,6 @@ body{
 
 
 @media (max-width: 850px){
-    body{
-        background-size: 200% 200%;
-    }
-
     .cabecalho{
         padding-top: 90px;
     }
