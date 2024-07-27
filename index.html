@@ -19,16 +19,51 @@
     <main class="container-principal">
         <div class="cabecalho-tarefas">
             <h2 class="subtitulo">Tarefas:</h2>
-            <button class="button-more">
-                <img src="img/more.svg" alt="">
-            </button>
+            <div class="dropdown-container">
+                <button class="button-more">
+                    <img src="img/more.svg" alt="">
+                </button>
+                <ul class="cabecalho-tarefas__ul">
+                    <li class="cabecalho-tarefas__li">
+                        <button class="cabecalho-tarefas__li__button" id="btn-mostrar-concluidas">
+                            <img src="/img/check.svg" alt="">
+                            Mostrar tarefas concluídas
+                        </button>
+                    </li>
+                    <li class="cabecalho-tarefas__li">
+                        <button class="cabecalho-tarefas__li__button" id="btn-mostrar-pendentes">
+                            <img src="/img/pending.svg" alt="">
+                            Mostrar tarefas pendentes
+                        </button>
+                    </li>
+                    <li class="cabecalho-tarefas__li">
+                        <button class="cabecalho-tarefas__li__button" id="btn-mostrar-todas">
+                            <img src="/img/all.svg" alt="">
+                            Mostrar todas as tarefas
+                        </button>
+                    </li>
+                    <li class="cabecalho-tarefas__li">
+                        <button class="cabecalho-tarefas__li__button" id="btn-remover-concluidas">
+                            <img src="/img/lixeira.svg" alt="">
+                            Limpar tarefas concluidas
+                        </button>
+                    </li>
+                    <li class="cabecalho-tarefas__li">
+                        <button class="cabecalho-tarefas__li__button" id="btn-remover-todas">
+                            <img src="/img/lixeira.svg" alt="">
+                            Limpar todas as tarefas
+                        </button>
+                    </li> 
+                </ul>
+            </div>
+            
         </div>
         <section class="section-task-container">
             <ul class="list-tasks"></ul>
             <form class="form-add-task hidden">
                 <div class="form-field">
                     <label for="" class="form-label">
-                        Adcionando tarefa
+                        Adicionando tarefa
                     </label>
                     <textarea required class= "form-textarea" placeholder="No que você está trabalhando?"></textarea>
                 </div>

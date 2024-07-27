@@ -2,6 +2,16 @@ const btnAdicionarTarefa = document.querySelector(".button-add-task");
 const formAdicionarTarefa = document.querySelector('.form-add-task');
 const textarea = document.querySelector(".form-textarea");
 const listaTarefas = document.querySelector('.list-tasks');
+const btnCancelar = document.querySelector(".form-footer__button--cancel");
+const btnDeletar = document.querySelector(".form-footer__button--delete");
+const btnMais = document.querySelector(".button-more");
+
+const btnMostarConcluidas = document.querySelector('#btn-mostrar-concluidas');
+const btnMostrarPendentes = document.querySelector('#btn-mostrar-pendentes')
+const btnMostrarTodas = document.querySelector('#btn-mostrar-todas');
+const btnRemoverTodas = document.querySelector('#btn-remover-todas')
+const btnRemoverConcluidas = document.querySelector('#btn-remover-concluidas');
+
 
 let tarefas = JSON.parse(localStorage.getItem('tarefas')) || [];
 let tarefaSelecionada = null;
@@ -12,9 +22,10 @@ function atualizarTarefas() {
 
 function criarElementoTarefa(tarefa) {
     const li = document.createElement('li');
-    li.classList.add('task');
+    li.classList.add('task', 'pending');
     if (tarefa.concluida) {
         li.classList.add('done');
+        li.classList.remove('pending')
     }
 
     const checkBox = document.createElement('input');
@@ -110,3 +121,63 @@ tarefas.forEach(tarefa => {
     const elementoTarefa = criarElementoTarefa(tarefa);
     listaTarefas.append(elementoTarefa);
 });
+
+btnCancelar.addEventListener('click', () => {
+    textarea.value = "";
+    formAdicionarTarefa.classList.add('hidden')
+});
+
+btnDeletar.addEventListener('click', () => {
+    textarea.value = "";
+});
+
+btnMais.addEventListener('click', () => {
+    
+});
+
+function filtrarCompletas() {
+    const tarefasCompletas = document.querySelectorAll('.task.done');
+    document.querySelectorAll('.task').forEach(elemento => {
+        elemento.classList.add('hidden');
+        if (tarefasCompletas) {
+            tarefasCompletas.forEach(elemento => {
+                elemento.classList.remove('hidden')
+            })
+        }       
+        atualizarTarefas()
+    })
+
+}
+
+function filtrarPendentes() {
+    const tarefasPendentes = document.querySelectorAll('.task.pending');
+    document.querySelectorAll('.task').forEach(elemento => {
+        elemento.classList.add('hidden');
+        if (tarefasPendentes) {
+            tarefasPendentes.forEach(elemento => {
+                elemento.classList.remove('hidden')
+            })
+        }       
+        atualizarTarefas();
+    })
+
+}
+
+const removerTarefas = (somenteCompletas) => {
+    const seletor = somenteCompletas ? '.done' : '.task'
+    document.querySelectorAll(seletor).forEach(elemento => {
+        elemento.remove()
+    })
+    tarefas = somenteCompletas ? tarefas.filter(tarefa => !tarefa.concluida) : []
+    atualizarTarefas();
+}
+
+btnMostarConcluidas.onclick = () => filtrarCompletas()
+btnMostrarPendentes.onclick = () => filtrarPendentes()
+btnMostrarTodas.onclick = () => {
+    document.querySelectorAll('.task').forEach(elemento => {
+        elemento.classList.remove('hidden')
+    })
+}
+btnRemoverConcluidas.onclick = () => removerTarefas(true)
+btnRemoverTodas.onclick = () => removerTarefas(false)

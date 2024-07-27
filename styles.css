@@ -133,6 +133,47 @@ body{
     text-decoration: line-through;
 }
 
+.dropdown-container {
+    position: relative;
+}
+
+.cabecalho-tarefas__ul {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    z-index: 10;
+    top: 100%;
+    right: 0;
+    min-width: 16rem;
+    padding: 1.2rem;
+}
+
+.cabecalho-tarefas__ul:hover,
+.button-more:hover ~ .cabecalho-tarefas__ul {
+    display: block;
+    text-align: right;
+    border-radius: 0.8rem;
+    border: 0.2rem solid var(--azul-royal, #144480);
+    background: var(--fundo-modal-2, #1B293B);
+}
+
+.cabecalho-tarefas__li {
+    margin: 1.2rem 0;
+}
+
+.cabecalho-tarefas__li__button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+    gap: 0.8rem;
+}
+
 .hidden {
     display: none;
 }
@@ -163,7 +204,8 @@ body{
     width: 100%;
     border-radius: 0.8rem;
     padding: 0.8rem;
-    background: #37495b;
+    background: #0d2834;
+    color: var(--color-secondary);
 }
 
 .button-edit,
