@@ -296,6 +296,15 @@ body{
         justify-content: space-between;
     }
 
+    .cabecalho-tarefas__ul:hover,
+    .button-more:hover ~ .cabecalho-tarefas__ul {
+    display: block;
+    text-align: right;
+    border-radius: 0.8rem;
+    border: 0.2rem solid var(--azul-royal, #144480);
+    background: var(--fundo-modal-2, #1B293B);
+    }
+
 	.container-principal{
         width: 90%;
     }
