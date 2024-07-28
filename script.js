@@ -132,7 +132,8 @@ btnDeletar.addEventListener('click', () => {
 });
 
 btnMais.addEventListener('click', () => {
-    
+    const menuFiltrar = document.querySelector('.cabecalho-tarefas-hidden__ul')
+    menuFiltrar.classList.toggle('cabecalho-tarefas__ul')
 });
 
 function filtrarCompletas() {
