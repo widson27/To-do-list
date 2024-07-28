@@ -9,7 +9,7 @@ const btnMais = document.querySelector(".button-more");
 const btnMostarConcluidas = document.querySelector('#btn-mostrar-concluidas');
 const btnMostrarPendentes = document.querySelector('#btn-mostrar-pendentes')
 const btnMostrarTodas = document.querySelector('#btn-mostrar-todas');
-const btnRemoverTodas = document.querySelector('#btn-remover-todas')
+const btnRemoverTodas = document.querySelector('#btn-remover-todas');
 const btnRemoverConcluidas = document.querySelector('#btn-remover-concluidas');
 
 
@@ -25,7 +25,7 @@ function criarElementoTarefa(tarefa) {
     li.classList.add('task', 'pending');
     if (tarefa.concluida) {
         li.classList.add('done');
-        li.classList.remove('pending')
+        li.classList.remove('pending');
     }
 
     const checkBox = document.createElement('input');
@@ -124,7 +124,7 @@ tarefas.forEach(tarefa => {
 
 btnCancelar.addEventListener('click', () => {
     textarea.value = "";
-    formAdicionarTarefa.classList.add('hidden')
+    formAdicionarTarefa.classList.add('hidden');
 });
 
 btnDeletar.addEventListener('click', () => {
@@ -132,8 +132,8 @@ btnDeletar.addEventListener('click', () => {
 });
 
 btnMais.addEventListener('click', () => {
-    const menuFiltrar = document.querySelector('.cabecalho-tarefas-hidden__ul')
-    menuFiltrar.classList.toggle('cabecalho-tarefas__ul')
+    const menuFiltrar = document.querySelector('.cabecalho-tarefas-hidden__ul');
+    menuFiltrar.classList.toggle('cabecalho-tarefas__ul');
 });
 
 function filtrarCompletas() {
@@ -142,10 +142,10 @@ function filtrarCompletas() {
         elemento.classList.add('hidden');
         if (tarefasCompletas) {
             tarefasCompletas.forEach(elemento => {
-                elemento.classList.remove('hidden')
+                elemento.classList.remove('hidden');
             })
         }       
-        atualizarTarefas()
+        atualizarTarefas();
     })
 
 }
@@ -156,10 +156,10 @@ function filtrarPendentes() {
         elemento.classList.add('hidden');
         if (tarefasPendentes) {
             tarefasPendentes.forEach(elemento => {
-                elemento.classList.remove('hidden')
+                elemento.classList.remove('hidden');
             })
         }       
-        atualizarTarefas();
+        document.querySelector('.cabecalho-tarefas-hidden__ul').classList.toggle('cabecalho-tarefas__ul');
     })
 
 }
@@ -173,12 +173,13 @@ const removerTarefas = (somenteCompletas) => {
     atualizarTarefas();
 }
 
-btnMostarConcluidas.onclick = () => filtrarCompletas()
-btnMostrarPendentes.onclick = () => filtrarPendentes()
+btnMostarConcluidas.onclick = () => filtrarCompletas();
+btnMostrarPendentes.onclick = () => filtrarPendentes();
 btnMostrarTodas.onclick = () => {
     document.querySelectorAll('.task').forEach(elemento => {
-        elemento.classList.remove('hidden')
+        elemento.classList.remove('hidden');
     })
+    document.querySelector('.cabecalho-tarefas-hidden__ul').classList.toggle('cabecalho-tarefas__ul');
 }
-btnRemoverConcluidas.onclick = () => removerTarefas(true)
-btnRemoverTodas.onclick = () => removerTarefas(false)
+btnRemoverConcluidas.onclick = () => removerTarefas(true);
+btnRemoverTodas.onclick = () => removerTarefas(false);
