@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "ES2023",
+        "outDir": "./dist/js",
+        "noEmitOnError": true
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}
