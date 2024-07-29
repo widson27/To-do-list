@@ -16,7 +16,7 @@
 }
 
 body{
-    background: url("/dist/img/background.png");
+    background: url("../img/background.png");
 }
 
 .cabecalho {
