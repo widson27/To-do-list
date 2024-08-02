@@ -1,3 +1,4 @@
+
 const btnMais = document.querySelector(".button-more") as HTMLButtonElement;
 
 const btnMostarConcluidas = document.querySelector('#btn-mostrar-concluidas') as HTMLButtonElement;
@@ -8,6 +9,7 @@ btnMais.addEventListener('click', () => {
     const menuFiltrar = document.querySelector('.cabecalho-tarefas-hidden__ul') as HTMLUListElement;
     menuFiltrar.classList.toggle('cabecalho-tarefas__ul');
 });
+
 
 function filtrarCompletas() {
     const tarefasCompletas = document.querySelectorAll('.task.done');

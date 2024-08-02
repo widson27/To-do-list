@@ -9,10 +9,11 @@ const btnDeletar = document.querySelector(".form-footer__button--delete") as HTM
 const btnRemoverTodas = document.querySelector('#btn-remover-todas') as HTMLButtonElement;
 const btnRemoverConcluidas = document.querySelector('#btn-remover-concluidas') as HTMLButtonElement;
 
-let tarefas: Tarefa[] = JSON.parse(localStorage.getItem('tarefas') || '[]');
 
 
 let tarefaSelecionada: Tarefa | null = null;
+
+let tarefas: Tarefa[] = JSON.parse(localStorage.getItem('tarefas') || '[]');
 
 function atualizarTarefas() {
     localStorage.setItem('tarefas', JSON.stringify(tarefas));
@@ -146,3 +147,4 @@ const removerTarefas = (somenteCompletas: boolean) => {
 
 btnRemoverConcluidas.onclick = () => removerTarefas(true);
 btnRemoverTodas.onclick = () => removerTarefas(false);
+    
