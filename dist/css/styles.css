@@ -1,0 +1,324 @@
+:root {
+    --color-primary: #123456;
+    --color-secondary: #FFF;
+    --azul-royal: #144480;
+    --lils: #B872FF;
+    --azul-profundo: #01080E;
+    --fundo-card: #3a5f6f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+}
+
+body{
+    padding: 2% 10%;
+    background: url("../img/background.png");
+}
+
+.cabecalho {
+    display: flex;
+    padding: 2%;
+    justify-content: center;
+}
+
+.titulo-cabecalho {
+    font-family: 'Roboto', sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    text-align: center;
+    background-color: var(--azul-profundo);
+    opacity: 70%;
+    width: 400px;
+    border-radius: 20px;
+    color: white;
+}
+
+.cabecalho-tarefas {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 300px;
+
+}
+
+.container-principal {
+    background-color: black;
+    opacity: 90%;
+    width: 500px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 100px auto 0;
+    
+}
+
+.subtitulo {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.button-add-task {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-size: 17px;
+    padding: 0 10px;
+    float: right;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.button-add-task:hover {
+    opacity: 0.8;
+}
+
+.button-add-task:active {
+    opacity: 0.6;
+}
+
+.list-tasks {
+    width: 100%;
+    list-style: none;
+    margin-top: 30px;
+}
+
+.section-task-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    gap: 20px;
+}
+
+.task {
+    background-color: var(--color-primary);
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.task-select {
+    border: 1px solid var(--color-secondary);
+}
+
+.botoes {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.task:hover img {
+    opacity: 1;
+}
+
+.done {
+    background-color:var(--azul-royal);
+    text-decoration: line-through;
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+.cabecalho-tarefas-hidden__ul {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    z-index: 10;
+    top: 100%;
+    right: 0;
+    min-width: 16rem;
+    padding: 1.2rem;
+}
+
+.cabecalho-tarefas__ul,
+.button-more ~ .cabecalho-tarefas__ul {
+    display: block;
+    text-align: right;
+    border-radius: 0.8rem;
+    border: 0.2rem solid var(--azul-royal, #144480);
+    background: var(--fundo-modal-2, #1B293B);
+}
+
+.cabecalho-tarefas__li {
+    margin: 1.2rem 0;
+}
+
+.cabecalho-tarefas__li__button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+    gap: 0.8rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-add-task {
+    padding: 1.6rem;
+    border-radius: 0.8rem;
+    background: var(--fundo-card);
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; 
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-label {
+    color: var(--azul-profundo);
+    font-family: Unbounded;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.form-textarea {
+    width: 100%;
+    border-radius: 0.8rem;
+    padding: 0.8rem;
+    background: #0d2834;
+    color: var(--color-secondary);
+}
+
+.button-edit,
+.button-more,
+.button-delete {
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.form-footer .splitter {
+    flex-grow: 1;
+}
+
+.form-footer__button {
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    color: var(--azul-profundo);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    gap: 0.8rem;
+}
+
+.form-footer__button--confirm {
+    border-radius: 20px;
+    padding: 0 8px;
+    color: #fff;
+    background: var(--azul-profundo);
+}
+
+.button--add-task {
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--lils);
+    border-radius: 3.2rem;
+    border: 0.2rem solid var(--lils);
+    width: 100%;
+    margin-top: 4rem;
+    padding: 1.8rem;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.button-edit:disabled {
+    color: #e6e6e6;
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+
+@media (max-width: 850px){
+    .cabecalho{
+        padding-top: 90px;
+    }
+
+    .titulo-cabecalho{
+        width: 320px;
+        font-size: 35px;
+    }
+
+    .cabecalho-tarefas{
+        gap: 23%;
+        justify-content: space-between;
+    }
+
+	.container-principal{
+        width: 90%;
+    }
+
+    .form-add-task {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .form-footer{
+        gap: 15px;
+    }
+
+    .form-footer__button{
+        gap: 0.5rem;
+    }
+
+    .form-textarea {
+        font-size: 16px;
+    }
+
+    .section-task-container{
+        gap: 0px;
+    }
+}
