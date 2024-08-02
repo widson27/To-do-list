@@ -1,4 +1,3 @@
-import { atualizarTarefas } from "../types/Tarefa.js";
 import { Tarefa } from "../types/TipoTarefa.js";
 
 const btnAdicionarTarefa = document.querySelector(".button-add-task") as HTMLButtonElement;
@@ -11,7 +10,13 @@ const btnRemoverTodas = document.querySelector('#btn-remover-todas') as HTMLButt
 const btnRemoverConcluidas = document.querySelector('#btn-remover-concluidas') as HTMLButtonElement;
 
 let tarefas: Tarefa[] = JSON.parse(localStorage.getItem('tarefas') || '[]');
+
+
 let tarefaSelecionada: Tarefa | null = null;
+
+function atualizarTarefas() {
+    localStorage.setItem('tarefas', JSON.stringify(tarefas));
+}
 
 function criarElementoTarefa(tarefa: Tarefa): HTMLLIElement {
     const li = document.createElement('li');

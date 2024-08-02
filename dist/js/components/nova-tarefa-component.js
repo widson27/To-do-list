@@ -7,7 +7,7 @@ const btnCancelar = document.querySelector(".form-footer__button--cancel");
 const btnDeletar = document.querySelector(".form-footer__button--delete");
 const btnRemoverTodas = document.querySelector('#btn-remover-todas');
 const btnRemoverConcluidas = document.querySelector('#btn-remover-concluidas');
-let tarefas = JSON.parse(localStorage.getItem('tarefas') || '[]');
+
 let tarefaSelecionada = null;
 function criarElementoTarefa(tarefa) {
     const li = document.createElement('li');
