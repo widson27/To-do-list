@@ -25,12 +25,12 @@ function criarElementoTarefa(tarefa) {
     const botaoEditar = document.createElement('button');
     botaoEditar.classList.add('button-edit');
     const imagemBotaoEditar = document.createElement('img');
-    imagemBotaoEditar.setAttribute('src', '/dist/img/edit.png');
+    imagemBotaoEditar.setAttribute('src', './img/edit.png');
     botaoEditar.append(imagemBotaoEditar);
     const botaoApagar = document.createElement('button');
     botaoApagar.classList.add('button-delete');
     const imagemBotaoApagar = document.createElement('img');
-    imagemBotaoApagar.setAttribute('src', '/dist/img/lixeira.svg');
+    imagemBotaoApagar.setAttribute('src', './img/lixeira.svg');
     botaoApagar.append(imagemBotaoApagar);
     const div = document.createElement('div');
     div.classList.add('botoes');
